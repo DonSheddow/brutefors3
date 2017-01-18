@@ -31,7 +31,7 @@ class Bucket(object):
         return self.parse_output(p)
 
     def upload_file(self, filename):
-        p = subprocess.run(["aws", "s3", "mv", filename, self.name], stderr=subprocess.PIPE)
+        p = subprocess.run(["aws", "s3", "cp", filename, self.name], stderr=subprocess.PIPE)
         return self.parse_output(p)
 
 
